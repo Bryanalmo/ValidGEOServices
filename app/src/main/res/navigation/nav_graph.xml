@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/navArtistFragment">
+
+    <fragment
+        android:id="@+id/navArtistFragment"
+        android:name="com.bryanalvarez.validgeoservices.view.ui.fragments.ArtistsFragment"
+        android:label="fragment_artists"
+        tools:layout="@layout/fragment_artists" >
+        <action
+            android:id="@+id/action_artistsFragment_to_tracksFragment"
+            app:destination="@id/navTracksFragment" />
+        <action
+            android:id="@+id/action_navArtistFragment_to_artistDetailFragmentDialog"
+            app:destination="@id/artistDetailFragmentDialog" />
+    </fragment>
+    <fragment
+        android:id="@+id/navTracksFragment"
+        android:name="com.bryanalvarez.validgeoservices.view.ui.fragments.TracksFragment"
+        android:label="fragment_tracks"
+        tools:layout="@layout/fragment_tracks" >
+        <action
+            android:id="@+id/action_navTracksFragment_to_tracktDetailFragmentDialog"
+            app:destination="@id/tracktDetailFragmentDialog" />
+    </fragment>
+
+    <dialog
+        android:id="@+id/artistDetailFragmentDialog"
+        android:name="com.bryanalvarez.validgeoservices.view.ui.fragments.ArtistDetailFragment"
+        android:label="ArtistDetailFragmentDialog"
+        tools:layout="@layout/fragment_artist_detail"/>
+
+    <dialog
+        android:id="@+id/tracktDetailFragmentDialog"
+        android:name="com.bryanalvarez.validgeoservices.view.ui.fragments.TrackDetailFragment"
+        android:label="TrackDetailFragmentDialog"
+        tools:layout="@layout/fragment_track_detail"/>
+</navigation>
